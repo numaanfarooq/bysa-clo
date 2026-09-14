@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class="modal-sizes">${p.sizes.map(s => `<span class="size-pill">${s}</span>`).join('')}</div>
         <div class="modal-actions">
           <a class="btn btn-primary" target="_blank" rel="noopener" href="${INSTAGRAM_URL}">Order on Instagram</a>
-          <a class="btn btn-outline" target="_blank" rel="noopener" href="https://instagram.com/direct/new/?text=${encodeURIComponent('Hi! I\\'m interested in the ' + p.name)}">DM to Enquire</a>
+          <a class="btn btn-outline" target="_blank" rel="noopener" href="https://instagram.com/direct/new/?text=${encodeURIComponent('Hi! I am interested in the ' + p.name)}">DM to Enquire</a>
         </div>
       </div>`;
     modalOverlay.classList.add('open');
