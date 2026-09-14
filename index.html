@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BYSA CLO — Aesthetic Women's Fashion</title>
+<meta name="description" content="BYSA CLO — Pinterest-inspired, made-to-order women's dresses. Maxi, bodycon, mini, casual, occasion and fully customized pieces.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="logo">BYSA <span>CLO</span></div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#collections">Collections</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#footer">Contact</a></li>
+  </ul>
+  <a class="nav-cta" href="https://instagram.com/bysa.clo" target="_blank" rel="noopener">Shop on Instagram</a>
+  <button class="nav-toggle" id="navToggle" aria-label="Menu">☰</button>
+</nav>
+
+<section class="hero">
+  <div class="hero-eyebrow">Made-to-order · Aesthetic · Feminine</div>
+  <h1>Dresses that feel<br>like a moodboard come to life</h1>
+  <p>BYSA CLO crafts Pinterest-inspired, made-to-order pieces — maxi to customized — designed for the woman who wants her wardrobe to feel personal.</p>
+  <div class="hero-btns">
+    <a class="btn btn-primary" href="#collections">Explore Collections</a>
+    <a class="btn btn-outline" href="https://instagram.com/bysa.clo" target="_blank" rel="noopener">Follow @bysa.clo</a>
+  </div>
+  <div class="scroll-cue"><span>Scroll</span><span class="line"></span></div>
+</section>
+
+<section class="section" id="collections">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">The Edit</div>
+      <h2>Shop the Collection</h2>
+      <p>Every piece is made to order — pick a style below, or ask us to customize it entirely to you.</p>
+    </div>
+    <div class="filters" id="filters"></div>
+    <div class="grid" id="productGrid"></div>
+  </div>
+</section>
+
+<section class="section about" id="about">
+  <div class="container about-grid">
+    <div class="about-visual"></div>
+    <div class="about-text">
+      <div class="eyebrow">Our Story</div>
+      <h2>Designed for the romantic, the elegant, the effortlessly aesthetic</h2>
+      <p>BYSA CLO started as a Pinterest board of dresses that didn't exist yet — so we started making them. Every piece is contemporary, feminine and premium, made to order so it fits you, not the other way around. From an everyday maxi to a fully customized statement gown, we build each order with you, over DM, start to finish.</p>
+      <a class="btn btn-primary" style="margin-top:24px;" href="https://instagram.com/bysa.clo" target="_blank" rel="noopener">Start Your Order</a>
+    </div>
+  </div>
+</section>
+
+<footer id="footer">
+  <div class="container">
+    <h3>BYSA CLO</h3>
+    <p>Aesthetic, made-to-order women's fashion.</p>
+    <div class="footer-links">
+      <a href="https://instagram.com/bysa.clo" target="_blank" rel="noopener">Instagram</a>
+      <a href="#collections">Collections</a>
+      <a href="#about">About</a>
+    </div>
+    <div class="footer-note">© <span id="year"></span> BYSA CLO. All orders placed via Instagram DM.</div>
+  </div>
+</footer>
+
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal" id="modalBody"></div>
+</div>
+
+<script src="products.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
