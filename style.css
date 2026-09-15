@@ -154,6 +154,11 @@ img{max-width:100%; display:block;}
   margin-top:12px; display:inline-block; font-size:0.85rem; letter-spacing:0.08em;
   text-transform:uppercase; color:var(--text-soft); border-bottom:1px solid var(--line); padding-bottom:2px;
 }
+.card-tag-soldout{
+  left:auto; right:12px; background:rgba(58,44,47,0.85); color:#fff;
+}
+.card.sold-out .card-media img{ filter:grayscale(35%) brightness(0.92); }
+.card.sold-out .card-price{ color:var(--text-soft); }
 
 /* About / Brand section */
 .about{

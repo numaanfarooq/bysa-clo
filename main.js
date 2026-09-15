@@ -20,14 +20,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function cardHTML(p){
     return `
-      <div class="card" data-collection="${p.collection}" data-id="${p.id}">
+      <div class="card${p.soldOut ? ' sold-out' : ''}" data-collection="${p.collection}" data-id="${p.id}">
         <div class="card-media">
           <span class="card-tag">${p.collection}</span>
+          ${p.soldOut ? '<span class="card-tag card-tag-soldout">Sold Out</span>' : ''}
           <img src="${p.image}" alt="${p.name}" loading="lazy">
         </div>
         <div class="card-body">
           <h3>${p.name}</h3>
-          <div class="card-price">${money(p.price)}</div>
+          <div class="card-price">${p.soldOut ? 'Sold Out' : money(p.price)}</div>
           <span class="card-cta">View details →</span>
         </div>
       </div>`;
@@ -65,16 +66,18 @@ document.addEventListener('DOMContentLoaded', () => {
       <button class="modal-close" id="modalClose">&times;</button>
       <div class="modal-media"><img src="${p.image}" alt="${p.name}"></div>
       <div class="modal-info">
-        <div class="tag">${p.collection}</div>
+        <div class="tag">${p.collection}${p.soldOut ? ' · Sold Out' : ''}</div>
         <h3>${p.name}</h3>
-        <div class="modal-price">${money(p.price)}</div>
+        <div class="modal-price">${p.soldOut ? 'Sold Out' : money(p.price)}</div>
         <p class="modal-desc">${p.description}</p>
         <div class="modal-meta"><strong>Fabric:</strong> ${p.fabric}</div>
         <div class="modal-meta"><strong>Sizes</strong></div>
         <div class="modal-sizes">${p.sizes.map(s => `<span class="size-pill">${s}</span>`).join('')}</div>
         <div class="modal-actions">
-          <a class="btn btn-primary" target="_blank" rel="noopener" href="${INSTAGRAM_URL}">Order on Instagram</a>
-          <a class="btn btn-outline" target="_blank" rel="noopener" href="https://instagram.com/direct/new/?text=${encodeURIComponent('Hi! I am interested in the ' + p.name)}">DM to Enquire</a>
+          ${p.soldOut
+            ? `<a class="btn btn-outline" target="_blank" rel="noopener" href="https://instagram.com/direct/new/?text=${encodeURIComponent('Hi! Will the ' + p.name + ' be restocked?')}">Ask About Restock</a>`
+            : `<a class="btn btn-primary" target="_blank" rel="noopener" href="${INSTAGRAM_URL}">Order on Instagram</a>
+          <a class="btn btn-outline" target="_blank" rel="noopener" href="https://instagram.com/direct/new/?text=${encodeURIComponent('Hi! I am interested in the ' + p.name)}">DM to Enquire</a>`}
         </div>
       </div>`;
     modalOverlay.classList.add('open');
